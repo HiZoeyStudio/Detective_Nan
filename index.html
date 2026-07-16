@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="有楠必解侦探事务所：火龙果消失事件" />
+  <title>火龙果消失事件｜有楠必解侦探事务所</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar">
+      <div class="brand">
+        <div class="brand-mark">楠</div>
+        <div>
+          <h1>有楠必解</h1>
+          <p>侦探事务所案件系统</p>
+        </div>
+      </div>
+
+      <nav class="nav" aria-label="案件导航">
+        <button class="nav-item active" data-page="dashboard">案件首页</button>
+        <button class="nav-item" data-page="case">案件概况</button>
+        <button class="nav-item" data-page="evidence">证据清单</button>
+        <button class="nav-item" data-page="people">人物档案</button>
+        <button class="nav-item" data-page="interviews">访谈记录</button>
+        <button class="nav-item" data-page="timeline">案件时间线</button>
+        <button class="nav-item" data-page="notes">调查笔记</button>
+        <button class="nav-item" data-page="conclusion">提交结论</button>
+      </nav>
+
+      <div class="sidebar-footer">
+        <span class="status-dot"></span>
+        <span>系统在线</span>
+      </div>
+    </aside>
+
+    <main class="main">
+      <header class="topbar">
+        <div>
+          <p class="eyebrow">CASE MANAGEMENT SYSTEM</p>
+          <h2 id="page-title">案件首页</h2>
+        </div>
+        <div class="case-badge">
+          <span>案件编号</span>
+          <strong>YN-2026-001</strong>
+        </div>
+      </header>
+
+      <section id="dashboard" class="page active">
+        <div class="hero-card">
+          <div>
+            <span class="case-type">内部事件 · 优先级：荒唐但紧急</span>
+            <h3>火龙果消失事件</h3>
+            <p>
+              今日上午，事务所公共区域内的一颗火龙果离奇失踪。
+              在真相查明前，任何人都不能擅自宣布“它可能只是被吃了”。
+            </p>
+            <button class="primary-btn" data-go="case">开始调查</button>
+          </div>
+          <div class="fruit-visual" aria-hidden="true">
+            <div class="fruit-body">
+              <span></span><span></span><span></span><span></span><span></span>
+            </div>
+          </div>
+        </div>
+
+        <div class="stats-grid">
+          <article class="stat-card">
+            <span>现有证据</span>
+            <strong id="evidence-count">8</strong>
+          </article>
+          <article class="stat-card">
+            <span>相关人员</span>
+            <strong>5</strong>
+          </article>
+          <article class="stat-card">
+            <span>已读档案</span>
+            <strong id="read-count">0</strong>
+          </article>
+          <article class="stat-card">
+            <span>调查进度</span>
+            <strong id="progress-text">0%</strong>
+          </article>
+        </div>
+
+        <div class="panel">
+          <div class="panel-heading">
+            <div>
+              <span class="section-label">最新动态</span>
+              <h3>案件状态</h3>
+            </div>
+          </div>
+          <div class="activity-list">
+            <div class="activity-item">
+              <span class="activity-time">10:32</span>
+              <div>
+                <strong>案件已建立</strong>
+                <p>负责人正式将此事登记为内部调查案件。</p>
+              </div>
+            </div>
+            <div class="activity-item">
+              <span class="activity-time">10:35</span>
+              <div>
+                <strong>初步证据已归档</strong>
+                <p>现场照片、群聊截图及员工访谈等待查看。</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="case" class="page">
+        <div class="panel">
+          <div class="panel-heading">
+            <div>
+              <span class="section-label">案件概况</span>
+              <h3>火龙果消失事件</h3>
+            </div>
+            <span class="tag open">调查中</span>
+          </div>
+
+          <div class="detail-grid">
+            <div class="detail-item"><span>发生地点</span><strong>侦探事务所内部</strong></div>
+            <div class="detail-item"><span>事件时间</span><strong>2026 年</strong></div>
+            <div class="detail-item"><span>案件性质</span><strong>物品失踪</strong></div>
+            <div class="detail-item"><span>失踪物品</span><strong>一颗火龙果</strong></div>
+          </div>
+
+          <div class="notice">
+            <strong>负责人批注</strong>
+            <p>本案虽然没有造成重大损失，但已经严重影响了事务所午休秩序。</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="evidence" class="page">
+        <div class="panel">
+          <div class="panel-heading">
+            <div>
+              <span class="section-label">证据库</span>
+              <h3>证据清单</h3>
+            </div>
+            <span class="muted">点击证据查看详情</span>
+          </div>
+          <div id="evidence-list" class="card-grid"></div>
+        </div>
+      </section>
+
+      <section id="people" class="page">
+        <div class="panel">
+          <div class="panel-heading">
+            <div>
+              <span class="section-label">人员信息</span>
+              <h3>人物档案</h3>
+            </div>
+          </div>
+          <div id="people-list" class="card-grid"></div>
+        </div>
+      </section>
+
+      <section id="interviews" class="page">
+        <div class="panel">
+          <div class="panel-heading">
+            <div>
+              <span class="section-label">访谈记录</span>
+              <h3>内部询问资料</h3>
+            </div>
+          </div>
+          <div id="interview-list" class="stack-list"></div>
+        </div>
+      </section>
+
+      <section id="timeline" class="page">
+        <div class="panel">
+          <div class="panel-heading">
+            <div>
+              <span class="section-label">时间线</span>
+              <h3>已知事件</h3>
+            </div>
+          </div>
+          <div id="timeline-list" class="timeline"></div>
+        </div>
+      </section>
+
+      <section id="notes" class="page">
+        <div class="panel">
+          <div class="panel-heading">
+            <div>
+              <span class="section-label">个人记录</span>
+              <h3>调查笔记</h3>
+            </div>
+            <span class="muted">自动保存在当前浏览器</span>
+          </div>
+          <textarea id="notes-box" placeholder="在这里记录你的推理、疑点和待确认事项……"></textarea>
+          <div class="button-row">
+            <button id="save-notes" class="primary-btn">保存笔记</button>
+            <span id="save-message" class="save-message"></span>
+          </div>
+        </div>
+      </section>
+
+      <section id="conclusion" class="page">
+        <div class="panel">
+          <div class="panel-heading">
+            <div>
+              <span class="section-label">最终推理</span>
+              <h3>提交调查结论</h3>
+            </div>
+          </div>
+
+          <form id="conclusion-form" class="conclusion-form">
+            <label>
+              谁最先移动了火龙果？
+              <select id="answer-person">
+                <option value="">请选择</option>
+                <option>前台</option>
+                <option>调查员</option>
+                <option>实习生</option>
+                <option>负责人</option>
+                <option>其他</option>
+              </select>
+            </label>
+
+            <label>
+              火龙果现在在哪里？
+              <textarea id="answer-location" placeholder="写下你的判断"></textarea>
+            </label>
+
+            <label>
+              请简述完整经过
+              <textarea id="answer-reasoning" placeholder="将证据连接起来"></textarea>
+            </label>
+
+            <button type="submit" class="primary-btn">提交结论</button>
+          </form>
+          <div id="result-box" class="result-box hidden"></div>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <div id="modal" class="modal hidden" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+    <div class="modal-card">
+      <button id="modal-close" class="modal-close" aria-label="关闭">×</button>
+      <span id="modal-type" class="section-label"></span>
+      <h3 id="modal-title"></h3>
+      <div id="modal-content"></div>
+    </div>
+  </div>
+
+  <script src="js/game-data.js"></script>
+  <script src="js/game.js"></script>
+</body>
+</html>
