@@ -1,197 +1,87 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="zh-CN">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="有楠必解侦探事务所网页推理游戏" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#11100e">
+  <meta name="description" content="有楠必解侦探事务所——在邮件中接受委托，调查线索，破解案件。">
   <title>有楠必解侦探事务所</title>
-  <link rel="stylesheet" href="css/style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;600;700;900&family=Roboto+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <div class="app">
-    <aside class="sidebar">
-      <div class="brand">
-        <div class="brand-mark">楠</div>
-        <div>
-          <h1>有楠必解</h1>
-          <p>侦探事务所内部系统</p>
-        </div>
+  <div class="noise" aria-hidden="true"></div>
+  <header class="topbar">
+    <button class="brand" data-route="home" aria-label="返回事务所首页">
+      <span class="brand-mark">楠</span>
+      <span><strong>有楠必解</strong><small>侦探事务所</small></span>
+    </button>
+    <nav aria-label="主导航">
+      <button data-route="home" class="nav-item active">事务所</button>
+      <button data-route="inbox" class="nav-item mail-nav">委托邮件 <span id="mailBadge" class="badge">1</span></button>
+      <button data-route="archive" class="nav-item">案件档案</button>
+    </nav>
+    <div class="status"><span></span>营业中</div>
+  </header>
+
+  <main id="app" tabindex="-1"></main>
+
+  <footer>
+    <span>© 2026 有楠必解侦探事务所</span>
+    <span>真相藏在被忽略的细节里</span>
+  </footer>
+
+  <template id="homeTemplate">
+    <section class="hero page-enter">
+      <div class="hero-copy">
+        <p class="eyebrow">YOU NAN DETECTIVE AGENCY · EST. 2026</p>
+        <h1>世上没有<br><em>解不开的谜。</em></h1>
+        <p class="intro">欢迎来到有楠必解侦探事务所。阅读来信，查验物证，听取证词——然后给出唯一合理的答案。</p>
+        <button class="primary" data-route="inbox">查看新委托 <span>→</span></button>
       </div>
-
-      <nav>
-        <button class="nav-item active" data-section="home">事务所首页</button>
-        <button class="nav-item" data-section="cases">案件档案库</button>
-        <button class="nav-item" data-section="staff">员工名册</button>
-        <button class="nav-item" data-section="achievements">事务所记录</button>
-      </nav>
-
-      <div class="sidebar-bottom">
-        <span class="online-dot"></span>
-        <span>系统在线</span>
+      <div class="hero-visual" aria-hidden="true">
+        <div class="case-paper">
+          <span class="paper-label">CONFIDENTIAL</span>
+          <div class="paper-lines"></div>
+          <div class="red-string one"></div><div class="red-string two"></div>
+          <div class="photo photo-a"></div><div class="photo photo-b"></div>
+          <div class="stamp">绝密<br><small>CASE FILE</small></div>
+        </div>
+        <div class="magnifier"></div>
       </div>
-    </aside>
+    </section>
+    <section class="desk-strip page-enter delay">
+      <article><span>01</span><div><strong>接收委托</strong><p>新案件会以邮件形式送达。</p></div></article>
+      <article><span>02</span><div><strong>调查取证</strong><p>梳理证词与散落的线索。</p></div></article>
+      <article><span>03</span><div><strong>提交推理</strong><p>锁定真相，完成案件报告。</p></div></article>
+    </section>
+  </template>
 
-    <main class="main">
-      <header class="topbar">
-        <div>
-          <p class="eyebrow">DETECTIVE OFFICE SYSTEM</p>
-          <h2 id="section-title">事务所首页</h2>
-        </div>
-        <div class="user-card">
-          <span>当前负责人</span>
-          <strong>谢楠</strong>
-        </div>
-      </header>
+  <template id="inboxTemplate">
+    <section class="mail-layout page-enter">
+      <aside class="mail-sidebar">
+        <div class="mail-title"><p class="eyebrow">AGENCY MAIL</p><h2>委托邮箱</h2></div>
+        <button class="mail-folder active">收件箱 <span id="inboxCount">1</span></button>
+        <button class="mail-folder">已归档 <span>0</span></button>
+        <div class="tip"><strong>侦探守则 #01</strong><p>不要假设来信人说的每一句都是真的。</p></div>
+      </aside>
+      <div class="mail-content">
+        <div class="mail-toolbar"><span>收件箱</span><span id="mailMeta">1 封邮件</span></div>
+        <div id="mailList" class="mail-list"></div>
+      </div>
+    </section>
+  </template>
 
-      <section id="home" class="section active">
-        <div class="hero">
-          <div>
-            <span class="pill">今日待办 · 1</span>
-            <h3>欢迎回到有楠必解侦探事务所</h3>
-            <p>
-              当前有一宗内部事件等待处理。虽然失踪的只是一颗火龙果，
-              但事务所已经因此陷入了严重的午休危机。
-            </p>
-            <button class="primary" data-open-case="case001">进入案件</button>
-          </div>
-          <div class="hero-stamp">CASE<br>001</div>
-        </div>
+  <template id="archiveTemplate">
+    <section class="archive-page page-enter">
+      <p class="eyebrow">CASE ARCHIVE</p><h1>案件档案</h1>
+      <div id="archiveList" class="archive-grid"></div>
+    </section>
+  </template>
 
-        <div class="stats">
-          <article>
-            <span>开放案件</span>
-            <strong>1</strong>
-          </article>
-          <article>
-            <span>已完成案件</span>
-            <strong id="completed-count">0</strong>
-          </article>
-          <article>
-            <span>事务所等级</span>
-            <strong>新手</strong>
-          </article>
-          <article>
-            <span>系统状态</span>
-            <strong>正常</strong>
-          </article>
-        </div>
-
-        <div class="panel">
-          <div class="panel-head">
-            <div>
-              <span class="label">CURRENT CASE</span>
-              <h3>当前案件</h3>
-            </div>
-          </div>
-
-          <article class="case-row featured">
-            <div class="case-number">001</div>
-            <div class="case-copy">
-              <span class="case-status open">已开放</span>
-              <h4>火龙果消失事件</h4>
-              <p>事务所内部发生的离奇水果失踪案。</p>
-            </div>
-            <button class="secondary" data-open-case="case001">查看案件</button>
-          </article>
-        </div>
-      </section>
-
-      <section id="cases" class="section">
-        <div class="panel">
-          <div class="panel-head">
-            <div>
-              <span class="label">CASE ARCHIVE</span>
-              <h3>案件档案库</h3>
-            </div>
-          </div>
-
-          <div class="case-list">
-            <article class="case-row">
-              <div class="case-number">001</div>
-              <div class="case-copy">
-                <span class="case-status open">已开放</span>
-                <h4>火龙果消失事件</h4>
-                <p>事务所内部发生的搞笑失踪案件。</p>
-              </div>
-              <button class="secondary" data-open-case="case001">进入</button>
-            </article>
-
-            <article class="case-row locked">
-              <div class="case-number">002</div>
-              <div class="case-copy">
-                <span class="case-status">开发中</span>
-                <h4>未命名案件</h4>
-                <p>新的委托尚未录入系统。</p>
-              </div>
-              <button class="secondary" disabled>锁定</button>
-            </article>
-
-            <article class="case-row locked">
-              <div class="case-number">003</div>
-              <div class="case-copy">
-                <span class="case-status">未开放</span>
-                <h4>未命名案件</h4>
-                <p>完成前置案件后开放。</p>
-              </div>
-              <button class="secondary" disabled>锁定</button>
-            </article>
-          </div>
-        </div>
-      </section>
-
-      <section id="staff" class="section">
-        <div class="panel">
-          <div class="panel-head">
-            <div>
-              <span class="label">STAFF DIRECTORY</span>
-              <h3>员工名册</h3>
-            </div>
-          </div>
-
-          <div class="card-grid">
-            <article class="info-card">
-              <span class="label">负责人</span>
-              <h4>谢楠</h4>
-              <p>事务所负责人。本系统的最高权限持有者。</p>
-            </article>
-            <article class="info-card">
-              <span class="label">前台</span>
-              <h4>待命名</h4>
-              <p>负责接收委托、快递和事务所内部八卦。</p>
-            </article>
-            <article class="info-card">
-              <span class="label">调查员</span>
-              <h4>待命名</h4>
-              <p>擅长调查，但不一定擅长解释自己的行踪。</p>
-            </article>
-            <article class="info-card">
-              <span class="label">实习生</span>
-              <h4>待命名</h4>
-              <p>对所有案件都过度认真，包括水果失踪。</p>
-            </article>
-          </div>
-        </div>
-      </section>
-
-      <section id="achievements" class="section">
-        <div class="panel">
-          <div class="panel-head">
-            <div>
-              <span class="label">OFFICE RECORDS</span>
-              <h3>事务所记录</h3>
-            </div>
-          </div>
-
-          <div class="empty-state">
-            <div>🏅</div>
-            <h4 id="achievement-title">暂无已获得记录</h4>
-            <p id="achievement-text">完成案件后，新的事务所记录会出现在这里。</p>
-          </div>
-        </div>
-      </section>
-    </main>
-  </div>
-
-  <script src="js/app.js"></script>
+  <script src="cases.js"></script>
+  <script src="app.js"></script>
 </body>
 </html>

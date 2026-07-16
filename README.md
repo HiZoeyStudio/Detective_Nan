@@ -1,31 +1,19 @@
 # 有楠必解侦探事务所
 
-这是一个“事务所主游戏 + 多个案件”的 GitHub Pages 项目。
+一个以邮件接收委托、调查线索并完成推理为核心玩法的中文网页推理游戏。
 
-## 当前结构
+## 本地预览
 
-- `index.html`：事务所首页
-- `css/style.css`：事务所首页样式
-- `js/app.js`：事务所首页功能
-- `cases/case001/`：第一个案件《火龙果消失事件》
+这是一个纯静态网站，直接打开 `index.html` 即可游玩，也可以使用任意静态文件服务器预览。
 
-## 上传到 GitHub
+## 发布到 GitHub Pages
 
-请把本文件夹内的所有内容上传到仓库根目录。上传后仓库首页应该直接看到：
+1. 将文件推送到 `Detective_Nan` 仓库的默认分支。
+2. 在仓库的 **Settings → Pages** 中，将发布源设为 **Deploy from a branch**。
+3. 选择默认分支和 `/ (root)` 目录并保存。
 
-- index.html
-- css
-- js
-- assets
-- cases
-- README.md
+## 添加新委托
 
-## 网站地址
+在 `cases.js` 的 `window.CASES` 数组中追加一个案件对象。每个案件包括来信内容、线索、嫌疑人、答案和结案解释。页面会自动把它显示为一封新邮件。
 
-如果仓库名是 `detective-office`，网址通常是：
-
-`https://你的用户名.github.io/detective-office/`
-
-## 添加新案件
-
-复制 `cases/case001` 文件夹，改名为 `case002`，再修改其中的文字、人物、证据和链接。
+玩家的已读邮件和结案进度保存在浏览器的 `localStorage` 中。
