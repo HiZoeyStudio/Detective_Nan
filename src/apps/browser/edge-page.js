@@ -1,0 +1,15 @@
+﻿(function () {
+  const page = document.querySelector('#edgePage');
+  const address = document.querySelector('#edgeAddress');
+  const params = new URLSearchParams(location.search);
+  const query = params.get('q') || '';
+  function renderHome() { page.innerHTML = `<div class="edge-search-home"><div><img src="./src/assets/microsoft-edge.svg" alt=""><b>Coogle</b></div><form id="standaloneEdgeForm"><span>⌕</span><input autocomplete="off" placeholder="输入关键词" value="${escapeText(query)}"><button>搜索</button></form></div>`; bindForm(); }
+  function renderResults(value) { const key=value.trim().toLowerCase(); const results=(window.nanSearchIndex||[]).filter(item=>item.keywords.some(word=>word.toLowerCase()===key)); address.textContent=value||'Coogle'; page.innerHTML=`<div class="standalone-results"><form id="standaloneEdgeForm"><span>⌕</span><input autocomplete="off" value="${escapeText(value)}"><button>搜索</button></form><p>搜索结果</p>${results.length?results.map(item=>item.href?`<a class="edge-result-link" href="${item.href}"><small>${item.url}</small><h2>${item.title}</h2><span>${item.summary}</span></a>`:`<article><small>${item.url}</small><h2>${item.title}</h2><span>${item.summary}</span></article>`).join(''):`<article class="edge-empty-result"><small>没有与“${escapeText(value)}”相关的内容</small><h2>未找到匹配结果</h2><span>请检查关键词是否准确，或尝试输入完整名称。</span></article>`}</div>`; bindForm(); }
+  function hasMatch(value){const key=value.trim().toLowerCase();return !!key&&(window.nanSearchIndex||[]).some(item=>item.keywords.some(word=>word.toLowerCase()===key));}
+  function getMatch(value){const key=value.trim().toLowerCase();return (window.nanSearchIndex||[]).find(item=>item.keywords.some(word=>word.toLowerCase()===key));}
+  function showInlineFeedback(form){if(form.nextElementSibling?.classList.contains('inline-search-feedback'))return;const feedback=document.createElement('div');feedback.className='inline-search-feedback';feedback.textContent='未找到匹配结果';form.insertAdjacentElement('afterend',feedback);}
+  function updateInlineFeedback(form){const value=form.querySelector('input').value;form.parentElement.querySelector('.edge-search-history')?.remove();const old=form.nextElementSibling?.classList.contains('inline-search-feedback')?form.nextElementSibling:null;if(!value.trim()||hasMatch(value)){old?.remove();return;}showInlineFeedback(form);}
+  function bindForm(){const form=document.querySelector('#standaloneEdgeForm');const input=form.querySelector('input');form.addEventListener('submit',event=>{event.preventDefault();const value=input.value.trim();const match=getMatch(value);if(!match){showInlineFeedback(form);return;}history.replaceState(null,'',`?q=${encodeURIComponent(value)}`);renderResults(value);});input.addEventListener('input',()=>updateInlineFeedback(form));}
+  function escapeText(value){return value.replace(/[&<>"']/g,char=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'})[char]);}
+  const initialMatch=getMatch(query);query&&initialMatch?renderResults(query):renderHome();
+})();
