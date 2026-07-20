@@ -1,10 +1,10 @@
 window.nanSearchIndex = [
   {
-    id: 'weibo-ghlchan', title: 'ghlchan的微博', url: 'weibo.com/u/ghlchan',
+    id: 'weibo-ghlchan', title: 'ghl_chan的微博', url: 'weibo.com/u/ghl_chan',
     href: './weibo-ghlchan.html',
-    keywords: ['ghlchan'],
-    summary: 'ghlchan的微博主页、舞蹈日常与公开动态。',
-    page: 'ghlchan的微博主页。'
+    keywords: ['ghl_chan'],
+    summary: 'ghl_chan的微博主页、舞蹈日常与公开动态。',
+    page: 'ghl_chan的微博主页。'
   },
   {
     id: 'cr-fitness-club', title: 'CR健身俱乐部｜会员平台', url: 'member.crfitness.cn',
