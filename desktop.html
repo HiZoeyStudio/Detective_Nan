@@ -1,0 +1,36 @@
+﻿<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>桌面</title>
+  <link rel="stylesheet" href="./src/styles/main.css">
+</head>
+<body>
+  <main id="desktop" class="desktop" aria-label="事务所电脑桌面">
+    <div id="storyProgress" class="story-progress" aria-label="故事进度 1 / 16"><span>01</span><i>/</i><b>16</b></div>
+    <section class="desktop-icons" aria-label="应用程序">
+      <button type="button" class="desktop-icon system-icon decorative-icon"><img src="./src/assets/this-pc.svg" alt=""><b>此电脑</b></button>
+      <button class="desktop-icon" data-open="mail"><img src="./src/assets/outlook.svg" alt=""><b>Omail</b></button>
+      <button class="desktop-icon" data-open-edge-page><img src="./src/assets/microsoft-edge.svg" alt=""><b>Macrosoft Edge</b></button>
+      <button type="button" class="desktop-icon system-icon decorative-icon"><img src="./src/assets/recycle-bin.svg" alt=""><b>回收站</b></button>
+    </section>
+    <section id="windowLayer" class="window-layer"></section>
+    <section id="notifications" class="notifications" aria-live="polite"></section>
+    <footer class="taskbar">
+      <button id="startButton" class="start-button" aria-label="开始"><span></span><span></span><span></span><span></span></button>
+      <form id="desktopSearchForm" class="search-box"><span>⌕</span><input id="desktopSearchInput" autocomplete="off" placeholder="搜索..."><button type="submit" aria-label="搜索">→</button></form>
+      <div class="taskbar-apps">
+        <button data-open="mail" aria-label="Omail"><img src="./src/assets/outlook.svg" alt=""></button>
+        <button data-open-edge-page aria-label="Macrosoft Edge"><img src="./src/assets/microsoft-edge.svg" alt=""></button>
+      </div>
+      <div class="system-tray"><button type="button" class="tray-decoy tray-arrow" aria-label="显示隐藏的图标">⌃</button><button type="button" class="tray-decoy tray-clock" aria-label="日期和时间"><time id="clock"></time></button></div>
+    </footer>
+  </main>
+  <script src="./src/cases/case-001/index.js"></script>
+  <script src="./src/cases/index.js"></script>
+  <script src="./src/apps/browser/search-data.js"></script>
+  <script src="./src/core/game.js"></script>
+  <script src="./src/main.js"></script>
+</body>
+</html>

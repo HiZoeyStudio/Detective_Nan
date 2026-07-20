@@ -1,0 +1,93 @@
+﻿<!doctype html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>ghlchan的微博</title>
+    <link rel="stylesheet" href="./src/styles/main.css">
+</head>
+
+<body class="weibo-story-body">
+    <div class="story-progress weibo-story-progress" aria-label="故事进度 15 / 16"><span>15</span><i>/</i><b>16</b></div>
+    <header class="weibo-topbar">
+        <div class="weibo-logo">微博</div><label><span>⌕</span><input type="text" placeholder="搜索微博"></label>
+        <nav><button class="active">首页</button><button>发现</button><button>消息</button></nav><button
+            class="weibo-login">登录</button>
+    </header>
+    <main class="weibo-page">
+        <section class="weibo-profile-cover ghl-cover">
+            <div class="weibo-avatar ghl-avatar">G</div>
+            <h1>ghlchan</h1>
+            <p>模特 | 跳舞 | 生活 | 随手记录</p>
+        </section>
+        <nav class="weibo-profile-nav"><button class="active">主页</button><button>我的微博</button><button>相册</button></nav>
+        <div class="weibo-columns">
+            <aside>
+                <article>
+                    <div><b>204</b><span>关注</span></div>
+                    <div><b>3837</b><span>粉丝</span></div>
+                    <div><b>372</b><span>微博</span></div>
+                </article>
+                <article class="weibo-about">
+                    <h2>个人资料</h2>
+                    <p>📍 湖南 长沙</p>
+                    <p>zhuang得很可爱✌</p>
+                </article>
+            </aside>
+            <section class="weibo-feed">
+                <header>她的微博</header>
+                <article class="weibo-post older-post">
+                    <div class="weibo-post-head">
+                        <div class="weibo-mini-avatar ghl-avatar">G</div>
+                        <div><b>ghlchan</b><small>昨天 11:30 · 来自 bPhone 17 Pro</small></div>
+                    </div>
+                    <p>最近在循环《独家记忆》</p>
+                </article>
+                <article class="weibo-post older-post">
+                    <div class="weibo-post-head">
+                        <div class="weibo-mini-avatar ghl-avatar">G</div>
+                        <div><b>ghlchan</b><small>06-23 · 来自 bPhone 17 Pro</small></div>
+                    </div>
+                    <p>感谢遇见的每一位<br>是你们让我的生日变得意义非凡</p>
+                </article>
+                <article class="weibo-post older-post">
+                    <div class="weibo-post-head">
+                        <div class="weibo-mini-avatar ghl-avatar">G</div>
+                        <div><b>ghlchan</b><small>05-11 · 来自 bPhone 17 Pro</small></div>
+                    </div>
+                    <p>拍摄结束啦！</p>
+                </article>
+                <article class="weibo-post ghl-dance-post">
+                    <div class="weibo-post-head">
+                        <div class="weibo-mini-avatar ghl-avatar">G</div>
+                        <div><b>ghlchan</b><small>04-22 · 来自 bPhone 17 Pro</small></div><button>•••</button>
+                    </div>
+                    <p>面包判官！</p>
+                    <div class="weibo-blank-photo"><span>图片待替换</span></div>
+                    <footer><button id="toggleGhlRepost">↗ 转发 1</button><button>◇ 评论 6</button><button>♡ 赞 93</button>
+                    </footer>
+                    <section class="weibo-repost-panel" id="ghlRepost" hidden>
+                        <article><a class="weibo-comment-avatar dancey-avatar" href="./weibo-dandan-dancey.html">淡</a>
+                            <div><a href="./weibo-dandan-dancey.html">淡淡Dancey</a>
+                                <p>面包判官来了！</p><small>04-22　转发微博</small>
+                            </div>
+                        </article>
+                    </section>
+                </article>
+            </section>
+            <aside class="weibo-right">
+                <article>
+                    <h2>相关推荐</h2>
+                    <p>舞蹈与本地生活博主</p>
+                </article>
+            </aside>
+        </div>
+    </main>
+    <footer data-shared-taskbar></footer>
+    <script src="./src/apps/browser/search-data.js"></script>
+    <script src="./src/apps/shared/taskbar.js"></script>
+    <script src="./src/apps/weibo/ghlchan-page.js"></script>
+</body>
+
+</html>

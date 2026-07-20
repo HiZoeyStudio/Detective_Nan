@@ -1,0 +1,97 @@
+﻿<!doctype html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>徐致菁的微博</title>
+    <link rel="stylesheet" href="./src/styles/main.css">
+</head>
+
+<body class="weibo-story-body">
+    <div class="story-progress weibo-story-progress" aria-label="故事进度 11 / 16"><span>11</span><i>/</i><b>16</b></div>
+    <header class="weibo-topbar">
+        <div class="weibo-logo">微博</div><label><span>⌕</span><input type="text" placeholder="搜索微博"></label>
+        <nav><button class="active">首页</button><button>发现</button><button>消息</button></nav><button
+            class="weibo-login">登录</button>
+    </header>
+    <main class="weibo-page">
+        <section class="weibo-profile-cover xu-cover">
+            <div class="weibo-avatar xu-avatar">徐</div>
+            <h1>徐致菁SingingJill</h1>
+            <p>生活随手记</p>
+        </section>
+        <nav class="weibo-profile-nav"><button class="active">主页</button><button>我的微博</button><button>相册</button></nav>
+        <div class="weibo-columns">
+            <aside>
+                <article>
+                    <div><b>181</b><span>关注</span></div>
+                    <div><b>8354</b><span>粉丝</span></div>
+                    <div><b>691</b><span>微博</span></div>
+                </article>
+                <article class="weibo-about">
+                    <h2>个人资料</h2>
+                    <p>📍 湖南 长沙</p>
+                    <p>记录一些生活碎片。</p>
+                </article>
+            </aside>
+            <section class="weibo-feed">
+                <header>她的微博</header>
+                <article class="weibo-post xu-latest-post">
+                    <div class="weibo-post-head">
+                        <div class="weibo-mini-avatar xu-avatar">徐</div>
+                        <div><b>徐致菁SingingJill</b><small>今天 16:19 · 来自 bPhong 17 Pro</small></div><button>•••</button>
+                    </div>
+                    <p>这是在干什么</p>
+                    <div class="weibo-blank-photo"><span>图片待替换</span></div>
+                    <footer><button>↗ 转发 </button><button id="toggleXuComments">◇ 评论 </button><button>♡ 赞 </button>
+                    </footer>
+                    <section class="weibo-comment-panel" id="xuComments" hidden>
+                        <header><b>全部评论</b><span>按热度</span></header>
+                        <article><a class="weibo-comment-avatar jiyun-avatar" href="./weibo-jiyun-ziranma.html">济</a>
+                            <div><a href="./weibo-jiyun-ziranma.html">济云子然妈</a>
+                                <p>小冉转得很好啊</p><small>今天 16:35　回复　</small>
+                            </div>
+                        </article>
+                        <article><span class="weibo-comment-avatar">小</span>
+                            <div><b>马栏山微笑便利店</b>
+                                <p>在现场，她们打起来了！</p><small>今天 16:51　回复</small>
+                            </div>
+                        </article>
+                        <article><span class="weibo-comment-avatar">风</span>
+                            <div><b>不愿透露姓名的编舞师</b>
+                                <p>走着走着突然被打劫了谁懂啊</p><small>今天 16:21　回复</small>
+                            </div>
+                        </article>
+                    </section>
+                </article>
+                <article class="weibo-post older-post">
+                    <div class="weibo-post-head">
+                        <div class="weibo-mini-avatar xu-avatar">徐</div>
+                        <div><b>徐致菁SingingJill</b><small>2025-01-22 · 来自 bPhong 16 Pro</small></div>
+                    </div>
+                    <p>我们家那两个怎么不住一起了也能天天吵架？</p>
+                </article>
+                <article class="weibo-post older-post">
+                    <div class="weibo-post-head">
+                        <div class="weibo-mini-avatar xu-avatar">徐</div>
+                        <div><b>徐致菁SingingJill</b><small>2024-12-25 11:30 · 来自 bPhong 16 Pro</small></div>
+                    </div>
+                    <p>跟侯宇商量了一下让凯琳和月月换房间，要不然她天天劝架都要劝累了</p>
+                </article>
+            </section>
+            <aside class="weibo-right">
+                <article>
+                    <h2>相关推荐</h2>
+                    <p>你可能感兴趣的本地用户</p>
+                </article>
+            </aside>
+        </div>
+    </main>
+    <footer data-shared-taskbar></footer>
+    <script src="./src/apps/browser/search-data.js"></script>
+    <script src="./src/apps/shared/taskbar.js"></script>
+    <script src="./src/apps/weibo/xu-zhijing-page.js"></script>
+</body>
+
+</html>

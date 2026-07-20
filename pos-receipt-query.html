@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>前台单据查询</title>
+  <link rel="stylesheet" href="./src/styles/main.css">
+</head>
+<body class="pos-query-body">
+  <main class="pos-query-page">
+    <header class="pos-query-title">【前台单据查询】</header>
+    <section class="pos-query-panel">
+      <form class="pos-query-form" onsubmit="return false">
+        <label><span>日期：</span><input value="2026-06-27 00:00:00"></label>
+        <i>到</i>
+        <label><input value="2026-06-27 16:15:17"></label>
+        <button type="submit">查询</button>
+        <label><span>会员：</span><input></label>
+        <label class="pos-order-field"><span>单号：</span><input></label>
+      </form>
+
+      <div class="pos-table pos-order-table">
+        <div class="pos-table-row pos-table-head"><span>单号</span><span>收银员</span><span>单据日期</span><span>单据金额</span><span>系统抹零</span><span>会员卡号</span><span>会员姓名</span></div>
+        <button class="pos-table-row selected" type="button"><span>480334221</span><span>管理员</span><span>2026-06-27 16:10:57</span><span>132</span><span>0</span><span></span><span></span></button>
+        <button class="pos-table-row" type="button"><span>480334220</span><span>管理员</span><span>2026-06-27 15:55:21</span><span>12</span><span>0</span><span></span><span></span></button>
+        <button class="pos-table-row" type="button"><span>480334219</span><span>管理员</span><span>2026-06-27 15:47:30</span><span>11.3</span><span>0</span><span></span><span></span></button>
+        <button class="pos-table-row" type="button"><span>480334218</span><span>管理员</span><span>2026-06-27 15:40:21</span><span>12</span><span>0</span><span></span><span></span></button>
+        <button class="pos-table-row" type="button"><span>480334217</span><span>管理员</span><span>2026-06-27 15:31:49</span><span>12.68</span><span>0</span><span></span><span></span></button>
+      </div>
+
+      <div class="pos-query-total"><span>合计：</span><span>单数：64</span><span>金额：3212.35</span><span>抹零：0</span></div>
+
+      <div class="pos-table pos-product-table">
+        <div class="pos-table-row pos-table-head"><span>商品编码</span><span>条形码</span><span>商品名称</span><span>单位</span><span>规格</span><span>数量</span><span>实价</span><span>金额</span><span>业务员</span></div>
+        <button class="pos-table-row selected" type="button"><span>690102801105</span><span></span><span>全糖红心火龙果</span><span>克</span><span>565</span><span>1</span><span>11.3</span><span>11.3</span><span></span></button>
+      </div>
+    </section>
+  </main>
+  <footer data-shared-taskbar></footer>
+  <script src="./src/apps/browser/search-data.js"></script>
+  <script src="./src/apps/shared/taskbar.js"></script>
+  <script src="./src/apps/cloud/pos-query.js"></script>
+</body>
+</html>

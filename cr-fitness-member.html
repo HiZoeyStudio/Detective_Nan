@@ -1,0 +1,99 @@
+﻿<!doctype html>
+<html lang="zh-CN">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>CR健身俱乐部｜会员平台</title>
+  <link rel="stylesheet" href="./src/styles/main.css">
+</head>
+
+<body class="cr-body">
+  <div class="story-progress cr-progress" aria-label="故事进度 14 / 16"><span>14</span><i>/</i><b>16</b></div>
+  <header class="cr-header"><a href="#"><b>CR</b><span>FITNESS CLUB</span></a>
+    <nav><button>俱乐部介绍</button><button>课程中心</button><button>教练团队</button><button class="active">会员平台</button></nav>
+  </header>
+  <main class="cr-login-view" id="crLoginView">
+    <section class="cr-login-art"><small>MEMBER COMMUNITY</small>
+      <h1>更强壮，<br>从每一次坚持开始。</h1>
+      <p>CR 健身俱乐部会员专属社区</p>
+    </section>
+    <section class="cr-login-panel">
+      <form id="crLoginForm">
+        <header><small>MEMBER LOGIN</small>
+          <h2>会员登录</h2>
+          <p>请输入您的会员 ID 和密码</p>
+        </header><label><span>会员 ID</span><input id="crMemberId" type="text" autocomplete="username"
+            placeholder="请输入会员 ID"></label><label><span>密码</span><input id="crPassword" type="password"
+            autocomplete="current-password" placeholder="请输入密码"></label>
+        <div class="cr-login-options"><label><input type="checkbox"> 记住我的 ID</label><button type="button">忘记密码？</button>
+        </div>
+        <p class="cr-login-error" id="crLoginError" hidden>会员 ID 或密码错误，请重新输入。</p><button class="cr-submit"
+          type="submit">登录会员平台</button>
+        <footer>如需帮助，请联系俱乐部前台</footer>
+      </form>
+    </section>
+  </main>
+  <main class="cr-member-view" id="crMemberView" hidden>
+    <div class="cr-member-shell">
+      <aside>
+        <section>
+          <div class="cr-member-avatar">A</div>
+          <h2>AngelicaLee</h2><span>金卡会员</span>
+        </section>
+        <nav><button
+            class="active">动态首页</button><button>我的课程</button><button>训练记录</button><button>会员活动</button><button>账户设置</button>
+        </nav><button id="crLogout">退出登录</button>
+      </aside>
+      <section class="cr-feed">
+        <header>
+          <div><small>MEMBER COMMUNITY</small>
+            <h1>会员动态</h1>
+          </div><button>＋ 发布动态</button>
+        </header>
+        <article class="cr-post">
+          <header>
+            <div class="cr-post-avatar coach">月</div>
+            <div><b>张月 <i>认证教练</i></b><small>今天 16:21 · CR健身俱乐部</small></div><button>•••</button>
+          </header>
+          <p>今日下午茶</p>
+          <div class="cr-blank-photo"><span>图片待替换</span></div>
+          <footer><button>♡ 赞 26</button><button>◇ 评论 8</button><button>↗ 分享</button></footer>
+        </article>
+        <article class="cr-post">
+          <header>
+            <div class="cr-post-avatar">孙</div>
+            <div><b>孙怡</b><small>昨天 20:15 · 金卡会员</small></div><button>•••</button>
+          </header>
+          <p>今天完成了今年的第二次训练，很棒！</p>
+          <footer><button>♡ 赞 14</button><button>◇ 评论 3</button><button>↗ 分享</button></footer>
+        </article>
+        <article class="cr-post">
+          <header>
+            <div class="cr-post-avatar trainer">陈</div>
+            <div><b>徐梦洁 <i>认证教练</i></b><small>昨天 19:42 · CR健身俱乐部</small></div><button>•••</button>
+          </header>
+          <p>晚间团体课程顺利结束，记得做好拉伸。</p>
+          <footer><button>♡ 赞 31</button><button>◇ 评论 5</button><button>↗ 分享</button></footer>
+        </article>
+      </section>
+      <aside class="cr-sidebar">
+        <article>
+          <h2>今日课程</h2>
+          <p><b>18:30</b> 核心训练</p>
+          <p><b>19:30</b> 瑜伽拉伸</p>
+          <p><b>20:15</b> 动感单车</p>
+        </article>
+        <article>
+          <h2>本月训练</h2><strong>8</strong><span>次到店记录</span>
+        </article>
+      </aside>
+    </div>
+  </main>
+  <footer data-shared-taskbar></footer>
+  <script src="./src/apps/browser/search-data.js"></script>
+  <script src="./src/apps/shared/taskbar.js"></script>
+  <script src="./src/apps/fitness/cr-member-page.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,31 @@
+﻿<!doctype html>
+<html lang="zh-CN">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>马栏山博物馆｜金银细工非遗课堂</title>
+  <link rel="stylesheet" href="./src/styles/main.css">
+</head>
+
+<body class="museum-body">
+  <div class="story-progress museum-story-progress" aria-label="故事进度 2 / 16"><span>02</span><i>/</i><b>16</b></div>
+  <header class="museum-header">
+    <div class="museum-brand museum-pseudo-link" role="link" tabindex="0" aria-label="马栏山博物馆主页">
+      <div class="museum-mark">馬</div>
+      <div>
+        <h1>马栏山博物馆</h1><span>MALANSHAN MUSEUM</span>
+      </div>
+    </div>
+    <nav><button class="active" data-museum-tab="classroom">非遗课堂</button><button
+        data-museum-tab="exhibitions">展览咨询</button><button data-museum-tab="guides">讲解员介绍与预约</button><button
+        data-museum-tab="visit">参观指南</button></nav>
+  </header>
+  <main id="museumContent" class="museum-content"></main>
+  <footer data-shared-taskbar></footer>
+  <script src="./src/apps/browser/search-data.js"></script>
+  <script src="./src/apps/shared/taskbar.js"></script>
+  <script src="./src/apps/museum/museum-page.js"></script>
+</body>
+
+</html>
