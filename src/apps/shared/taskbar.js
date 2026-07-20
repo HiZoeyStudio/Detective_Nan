@@ -54,6 +54,7 @@
       const commentButton = post.querySelector('footer button:nth-child(2)');
       const commentPanel = post.querySelector('.dancey-inline-comments');
       commentPanel.hidden = true;
+      let wechatNotificationSoundPlayed = false;
       commentButton.addEventListener('click', () => {
         commentPanel.hidden = !commentPanel.hidden;
         commentButton.classList.toggle('active', !commentPanel.hidden);
@@ -65,6 +66,18 @@
           const alertPopover = alert.querySelector('.wechat-alert-popover');
           alertPopover.style.setProperty('bottom', '40px', 'important');
           host.querySelector('.tray-arrow').insertAdjacentElement('afterend', alert);
+          if (!wechatNotificationSoundPlayed) {
+            wechatNotificationSoundPlayed = true;
+
+            const notificationAudio = new Audio(
+              './src/assets/audio/wechat-notification.mp3'
+            );
+
+            notificationAudio.volume = 0.7;
+            notificationAudio.play().catch(error => {
+              console.warn('微信消息提示音播放失败：', error);
+            });
+          }
           alert.addEventListener('mouseenter', () => alert.classList.add('notification-seen'), { once: true });
           let alertHideTimer;
           alert.addEventListener('mouseenter', () => {
