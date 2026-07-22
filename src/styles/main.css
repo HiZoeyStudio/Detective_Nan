@@ -685,3 +685,27 @@ a,button,input,textarea,label,nav,[role="button"],.weibo-logo,.weibo-profile-cov
   user-select: text;
   -webkit-user-select: text;
 }
+
+/* 小尺寸屏幕邮箱布局 */
+@media (max-width: 1000px) {
+  .mail-app {
+    grid-template-columns:
+      130px
+      180px
+      minmax(280px, 1fr) !important;
+  }
+
+  .mail-app .outlook-apps {
+    grid-column: 1 !important;
+  }
+
+  .mail-app .outlook-list {
+    grid-column: 2 !important;
+  }
+
+  .mail-app .outlook-preview {
+    display: block !important;
+    grid-column: 3 !important;
+    min-width: 0;
+  }
+}
