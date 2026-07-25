@@ -44,7 +44,7 @@ window.nanSearchIndex = [
   {
     id: 'smile-convenience-store', title: '微笑便利店｜官方微博', url: 'weibo.com/weixiaobianlidian',
     href: './weibo-tangyixin.html',
-    keywords: ['微笑便利店'],
+    keywords: ['微笑便利店','马栏山微笑便利店'],
     summary: '微笑便利店官方动态、门店资讯与近期商品记录。',
     page: '微笑便利店相关公开页面。'
   },
@@ -54,29 +54,5 @@ window.nanSearchIndex = [
     keywords: ['马栏山博物馆'],
     summary: '马栏山博物馆官方网站——展览、非遗课堂、讲解预约与参观资讯。',
     page: '马栏山博物馆官方网站。'
-  },
-  {
-    id: 'taobao', title: '淘宝网', url: 'www.taobao.com',
-    keywords: ['淘宝', '购物', '网购', '商品'],
-    summary: '淘！我喜欢。在线选购服饰、家居、数码及生活用品。',
-    page: '这是一个收藏的网站入口。游戏中的购物记录与商品线索会在获得相应关键词后显示。'
-  },
-  {
-    id: 'baike', title: '百科全书', url: 'baike.search.local',
-    keywords: ['百科', '百科全书', '知识'],
-    summary: '检索人物、地点、事件与常识资料。',
-    page: '输入更具体的人名、地点或事件，才能找到相关条目。'
-  },
-  {
-    id: 'lin-chuan', title: '林川｜自由摄影师', url: 'people.search.local/lin-chuan',
-    keywords: ['林川', '自由摄影师林川'],
-    summary: '公开资料显示，林川是一名自由摄影师，长期拍摄城市夜景。',
-    page: '林川，31岁，自由摄影师。公开作品多为城市夜景与废弃建筑。最后一次公开更新是在失踪前三天。'
-  },
-  {
-    id: 'weather', title: '本地天气与历史气象', url: 'weather.search.local',
-    keywords: ['天气', '历史天气', '雨夜'],
-    summary: '查询当前及历史天气记录。',
-    page: '三日前晚间出现持续降雨，21:00 后雨势增强，部分路段监控画面受到影响。'
   }
 ];
